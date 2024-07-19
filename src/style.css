@@ -1,4 +1,146 @@
 *{
     padding: 0px;
     margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    height: 100%;
+}
+
+.sidebar{
+    background-color: rgb(115, 115, 206);
+    color: white;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.sidebar h1{
+    
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.project-heading-wrap{
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 12px;
+    padding-left: 8px;
+    
+}
+
+.sidebar h2{
+    font-size: 30px;
+    
+    
+}
+
+.sidebar .new-project-button{
+   width: 30px;
+   
+   border-radius: 20px;
+   box-shadow: 1px 1px 4px 1px rgba(255, 255, 255, 0.2);
+   
+    
+}
+.sidebar .new-project-button:active{
+    box-shadow: none;
+}
+
+
+.projects{
+    padding-left: 16px;
+}
+
+.projects button{
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    
+    font-size: 18px;
+    
+
+}
+.sidebar button:hover{
+    color: gainsboro;
+}
+
+.filter-white{
+    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(219deg) brightness(111%) contrast(101%);
+}
+.filter-background-color{
+    filter: invert(51%) sepia(48%) saturate(2576%) hue-rotate(214deg) brightness(87%) contrast(84%);
+}
+
+.content input{
+    width: 50px;
+    box-shadow: 1px 1px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    
+   
+    
+}
+.content input:active{
+    box-shadow: none;
+}
+
+.content{
+    margin-top: 20px;
+    margin-left: 12px;
+}
+
+.new-to-do-modal{
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 310px;
+    border: none;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    padding: 8px;
+    border-radius: 6px;
+    
+}
+
+.new-to-do-modal #description{
+    display: block;
+}
+
+
+
+.new-to-do-modal form{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+
+.description-wrapper{
+    margin-bottom: 10px;
+}
+
+.new-project-modal{
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    border: none;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+
+}
+
+.new-project-modal form{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }

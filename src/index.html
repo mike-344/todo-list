@@ -7,8 +7,69 @@
 </head>
 <body>
     <div class = "container">
-        <div class = "sidebar"></div>
-        <div class= "content"></div>
+        <div class = "sidebar">
+            <h1>ToDo List</h1>
+           
+            <div class="project-heading-wrap">
+                <h2>Projects</h2>
+                <input type="image" src="<%= require('./plus.svg') %>" class="filter-white new-project-button"/>
+            </div>
+            <div class="projects">
+                <button>Misc</button>
+                <div class="generated-projects">
+                
+                </div>
+            </div>
+            
+        </div>
+        <div class= "content">
+            <input type="image" src="<%= require('./plus-thick.svg') %>" class="filter-background-color new-item-button"/>
+        </div>
     </div>
+
+    <dialog class="new-to-do-modal">
+        <form>
+            <div>
+                <label for="title-input">Title:</label>
+                <input autofocus type="text" id="title-input">
+                <label for="due-date">Due date:</label>
+                <input type="date" id="due-date">
+            </div>
+            <div class="description-wrapper">
+                        <label for="description">Description:</label>
+                        <textarea id="description" cols="40" rows="10"></textarea>
+            </div>    
+            
+            
+            <div>
+                    <div>Priority:</div>
+                               
+                                   <button type="button">1</button>
+                                   <button type="button">2</button>
+                                   <button type="button">3</button>
+                               
+            </div>
+            
+            <div>
+                <button type="button">Cancel</button>
+                <button type="button" class="submit-new-todo">Submit</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="new-project-modal">
+        <form>
+            <h2>Create new project</h2>
+            <div>
+                <label for="project-title">Project title:</label>
+                <input autofocus type="text" id="project-title">
+            </div>
+            <div>
+                <button type="button">Cancel</button>
+                <button type="button">Submit</button>
+            </div>
+        </form>
+    </dialog>
+      
 </body>
 </html>
