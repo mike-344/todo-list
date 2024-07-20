@@ -17,6 +17,16 @@ function screenController(){
     newProjectModal.showModal();
 })
 
+    const title = document.querySelector("#title-input");
+    const description = document.querySelector("#due-date");
+    const dueDate = document.querySelector("#description");
+    //prob need nodelist, also maybe give a value attribute for buttons, or consider radio/checkboxes
+    //const priority
+
+    const submitNewToDo = document.querySelector(".submit-new-todo");
+    submitNewToDo.addEventListener("click", () => {
+        const newToDo = app.createNewToDo()
+    })
 
 
 

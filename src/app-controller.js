@@ -17,10 +17,10 @@ function appController(){
 
     let activeProject = miscProject;
 
-
+    //the screen controller will pass the class value of the target clicked
     const setActiveProject = (indexOfProject) => {
         if (indexOfProject === "misc"){
-            activeProject = "misc"
+            activeProject = miscProject;
         } else {
         activeProject = projectLibrary[+indexOfProject];
         }
@@ -28,6 +28,7 @@ function appController(){
 
     const getActiveProject = () => activeProject;
 
+    
     const createNewToDo = (title, description, dueDate, priority)=>{
         getActiveProject().addToDo(createToDoItem(title, description, dueDate, priority));
 

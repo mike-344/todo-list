@@ -15,7 +15,7 @@
                 <input type="image" src="<%= require('./plus.svg') %>" class="filter-white new-project-button"/>
             </div>
             <div class="projects">
-                <button>Misc</button>
+                <button class="misc">Misc</button>
                 <div class="generated-projects">
                 
                 </div>
@@ -24,6 +24,9 @@
         </div>
         <div class= "content">
             <input type="image" src="<%= require('./plus-thick.svg') %>" class="filter-background-color new-item-button"/>
+            <div class="todo-container">
+                <div class="todo-grid"></div>
+            </div>
         </div>
     </div>
 
@@ -41,14 +44,18 @@
             </div>    
             
             
-            <div>
-                    <div>Priority:</div>
-                               
-                                   <button type="button">1</button>
-                                   <button type="button">2</button>
-                                   <button type="button">3</button>
-                               
-            </div>
+            <fieldset>
+                <legend>Priority:</legend>
+              
+                <input type="radio" id="high" name="priority" value="high" />
+                <label for="high">High</label><br />
+              
+                <input type="radio" id="medium" name="priority" value="medium" />
+                <label for="medium">Medium</label><br />
+              
+                <input type="radio" id="Low" name="priority" value="low" />
+                <label for="low">Low</label>
+            </fieldset>
             
             <div>
                 <button type="button">Cancel</button>

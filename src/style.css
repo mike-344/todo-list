@@ -3,9 +3,11 @@
     margin: 0px;
     box-sizing: border-box;
 }
-
-body{
+html{
     height: 100vh;
+}
+body{
+    height: 100%;
 }
 
 .container{
@@ -19,6 +21,7 @@ body{
     color: white;
     padding-left: 12px;
     padding-right: 12px;
+    
 }
 .sidebar h1{
     
@@ -95,6 +98,7 @@ body{
 .content{
     margin-top: 20px;
     margin-left: 12px;
+   
 }
 
 .new-to-do-modal{
@@ -102,7 +106,7 @@ body{
     top: 30%;
     transform: translate(-50%, -50%);
     width: 400px;
-    height: 310px;
+    height: 350px;
     border: none;
     box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
     padding: 8px;
@@ -128,6 +132,10 @@ body{
 .description-wrapper{
     margin-bottom: 10px;
 }
+.new-to-do-modal fieldset{
+    margin-bottom: 7px;
+    border: none;
+}
 
 .new-project-modal{
     left: 50%;
@@ -143,4 +151,20 @@ body{
     display: flex;
     flex-direction: column;
     gap: 8px;
+}
+
+.todo-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 700px
+    
+}
+.todo-grid{
+    height: 500px;
+    width: 600px;
+    border: 1px solid  rgb(115, 115, 206);
+    border-radius: 9px;
+    box-shadow: 1px 1px 1px 1px gray;
 }
