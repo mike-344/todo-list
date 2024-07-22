@@ -156,6 +156,7 @@ body{
 .todo-container{
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 700px
@@ -167,4 +168,19 @@ body{
     border: 1px solid  rgb(115, 115, 206);
     border-radius: 9px;
     box-shadow: 1px 1px 1px 1px gray;
+    
 }
+
+.todo-grid > div{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    border-bottom: 1px dotted rgb(115, 115, 206);
+    
+}
+
+.content h1{
+    color: rgb(115, 115, 206);
+    font-style: italic;
+}
+
