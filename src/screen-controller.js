@@ -58,6 +58,7 @@ function screenController(){
             //
             let index = list.indexOf(todo);
             const wrapperDiv = document.createElement("div");
+            wrapperDiv.setAttribute("name", index);//
             const titleDiv = document.createElement("div");
             titleDiv.textContent=`Title: ${todo.title}`;
             const dueDiv = document.createElement("div");
@@ -125,7 +126,7 @@ function screenController(){
         const deleteTodoButton = document.createElement("button");
         deleteTodoButton.setAttribute('type', 'button');
         deleteTodoButton.textContent = "Delete";
-        deleteTodoButton.addEventListener("click", (e) => {
+        deleteTodoButton.addEventListener("mouseup", (e) => {
             app.getActiveProject().removeToDo(indexValue);
             todoGrid.innerHTML = "";
             displayAllTodoPreview();
@@ -135,6 +136,38 @@ function screenController(){
 
 
     }
+    const showTodoModal = document.querySelector(".show-todo-info");
+
+    const showTodoInfo = (titleof, dueof, descriptionof, priorityof) => {
+        const title = document.querySelector(".show-todo-info .title");
+        const due = document.querySelector(".show-todo-info .due-date");
+        const description = document.querySelector(".show-todo-info .description");
+        const priority = document.querySelector(".show-todo-info .priority");
+        title.textContent = titleof;
+        due.textContent = dueof;
+        description.textContent = descriptionof;
+        priority.textContent = priorityof;
+        showTodoModal.showModal();
+        
+
+    }
+
+    todoGrid.addEventListener("click", (e) => {
+        if (e.target.getAttribute('class') === "todo-grid"){
+            return;
+        }
+        let todoIndex = e.target.getAttribute("name");
+        let projectList = app.getActiveProject().getCurrentList();
+        let todo = projectList[+todoIndex];
+
+        let title = todo.title;
+        let due = todo.dueDate;
+        let description = todo.description;
+        let priority = todo.priority;
+        showTodoInfo(title, due, description, priority);
+        
+       
+    })
     
 
    
