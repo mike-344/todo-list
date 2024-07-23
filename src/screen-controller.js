@@ -47,6 +47,7 @@ function screenController(){
         dueDiv.textContent=`Due date: ${currentItem.dueDate}`;
         wrapperDiv.appendChild(titleDiv);
         wrapperDiv.appendChild(dueDiv);
+        wrapperDiv.appendChild(deleteTodo(currentIndex));
         todoGrid.appendChild(wrapperDiv);
 
     }
@@ -54,6 +55,8 @@ function screenController(){
     const displayAllTodoPreview = () => {
         let list = app.getActiveProject().getCurrentList();
         list.forEach((todo) => {
+            //
+            let index = list.indexOf(todo);
             const wrapperDiv = document.createElement("div");
             const titleDiv = document.createElement("div");
             titleDiv.textContent=`Title: ${todo.title}`;
@@ -61,6 +64,7 @@ function screenController(){
             dueDiv.textContent=`Due date: ${todo.dueDate}`;
             wrapperDiv.appendChild(titleDiv);
             wrapperDiv.appendChild(dueDiv);
+            wrapperDiv.appendChild(deleteTodo(index));
             todoGrid.appendChild(wrapperDiv);
 
         });
@@ -117,7 +121,20 @@ function screenController(){
 
     })
     
-    //switch project focus, then display current project todos/change title^
+    const deleteTodo = (indexValue) => {
+        const deleteTodoButton = document.createElement("button");
+        deleteTodoButton.setAttribute('type', 'button');
+        deleteTodoButton.textContent = "Delete";
+        deleteTodoButton.addEventListener("click", (e) => {
+            app.getActiveProject().removeToDo(indexValue);
+            todoGrid.innerHTML = "";
+            displayAllTodoPreview();
+            
+        })
+        return deleteTodoButton;
+
+
+    }
     
 
    

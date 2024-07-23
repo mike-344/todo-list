@@ -6,7 +6,7 @@ function createProjectLibrary(){
     }
 
     const removeProjectFromLibrary = (indexOfProject) => {
-        library.splice(indexOfProject, 1)
+        library.splice(+indexOfProject, 1)
     }
 
     return {addProjectToLibrary, removeProjectFromLibrary, getCurrentLibrary}

@@ -60,6 +60,7 @@ body{
 
 .projects{
     padding-left: 16px;
+    width: fit-content;
 }
 
 .projects button{

@@ -7,7 +7,7 @@ function createProject (title){
     }
 
     const removeToDo = (indexOfToDo) => {
-        toDoList.splice(indexOfToDo, 1);
+        toDoList.splice(+indexOfToDo, 1);
     }
 
     return {title, addToDo, removeToDo, getCurrentList}
