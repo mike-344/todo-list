@@ -188,9 +188,12 @@ function screenController(){
         let priority = todo.priority;
         showTodoInfo(title, due, description, priority);
         
-       
     })
     
+    const closeTodo = document.querySelector(".close-todo");
+    closeTodo.addEventListener("click", () => {
+        showTodoModal.close();
+    })
 
    
 
