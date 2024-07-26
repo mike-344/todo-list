@@ -30,12 +30,12 @@
     </div>
 
     <dialog class="new-to-do-modal">
-        <form>
+        <form class = "new-to-do-form">
             <div>
                 <label for="title-input">Title:</label>
-                <input autofocus type="text" id="title-input">
+                <input autofocus type="text" id="title-input" required>
                 <label for="due-date">Due date:</label>
-                <input type="date" id="due-date">
+                <input type="date" id="due-date" required>
             </div>
             <div class="description-wrapper">
                         <label for="description">Description:</label>
@@ -46,7 +46,7 @@
             <fieldset>
                 <legend>Priority:</legend>
               
-                <input type="radio" id="high" name="priority" value="high"/>
+                <input type="radio" id="high" name="priority" value="high" required/>
                 <label for="high">High</label><br />
               
                 <input type="radio" id="medium" name="priority" value="medium" />
@@ -57,22 +57,22 @@
             </fieldset>
             
             <div>
-                <button type="button">Cancel</button>
-                <button type="button" class="submit-new-todo">Submit</button>
+                <button type="button" class="cancel-new-todo">Cancel</button>
+                <button type="submit" class="submit-new-todo">Submit</button>
             </div>
         </form>
     </dialog>
 
     <dialog class="new-project-modal">
-        <form>
+        <form class="new-project-form">
             <h2>Create new project</h2>
             <div>
                 <label for="project-title">Project title:</label>
-                <input autofocus type="text" id="project-title">
+                <input autofocus type="text" id="project-title" required>
             </div>
             <div>
-                <button type="button">Cancel</button>
-                <button type="button" class="submit-new-project">Submit</button>
+                <button type="button" class="cancel-new-project">Cancel</button>
+                <button type="submit" class="submit-new-project">Submit</button>
             </div>
         </form>
     </dialog>

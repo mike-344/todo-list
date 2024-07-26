@@ -21,13 +21,32 @@ function screenController(){
     const description = document.querySelector("#description");
     const dueDate = document.querySelector("#due-date");
     //const priorities = document.getElementsByName("priority")
+    const newTodoForm = document.querySelector(".new-to-do-form");
+    const cancelNewTodo = document.querySelector(".cancel-new-todo");
+    const cancelNewProject = document.querySelector(".cancel-new-project");
+
+
+    cancelNewTodo.addEventListener("click", () => {
+        newTodoModal.close();
+    })
+
+    cancelNewProject.addEventListener("click", () => {
+        newProjectModal.close();
+    })
 
     const submitNewToDo = document.querySelector(".submit-new-todo");
-    submitNewToDo.addEventListener("click", (e) => {
-      //  e.preventDefault();
+    newTodoForm.addEventListener("submit", (e) => {
+        e.preventDefault();
         app.createNewToDo(title.value, description.value, dueDate.value, document.querySelector('input[name="priority"]:checked').value);
         displayTodoPreview();
         newTodoModal.close();
+        title.value = "";
+        description.value = "";
+        priority.value = "low"
+        dueDate.value = "yyyy-mm-dd";
+    
+
+
         
        console.log(app.getActiveProject());
     })
@@ -76,10 +95,13 @@ function screenController(){
     const projectTitle = document.querySelector("#project-title");
    // const projectsGrid = document.querySelector(".generated-projects")
    const sidebarProjects = document.querySelector(".projects")
-    submitNewProject.addEventListener("click", (e) => {
+   const newProjectForm = document.querySelector(".new-project-form")
+    newProjectForm.addEventListener("submit", (e) => {
+        e.preventDefault();
        app.createNewProject(projectTitle.value);
        displayProject();
        newProjectModal.close();
+       projectTitle.value = "";
     })
 
 
