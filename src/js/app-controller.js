@@ -44,6 +44,10 @@ function appController() {
     projectLibrary.addProjectToLibrary(createProject(title));
   };
 
+  const editTodo = () => {
+    
+  }
+
   return {
     setActiveProject,
     getActiveProject,

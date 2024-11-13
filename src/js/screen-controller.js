@@ -6,8 +6,25 @@ function screenController() {
   const newToDoButton = document.querySelector(".new-item-button");
   const newTodoModal = document.querySelector(".new-to-do-modal");
   newToDoButton.addEventListener("click", () => {
+    resetNewTodoForm();
     newTodoModal.showModal();
   });
+  const resetNewTodoForm = () => {
+    // Reset text fields
+    title.value = "";
+    description.value = "";
+    dueDate.value = "";
+    
+    // Reset radio buttons (set the default to "low")
+    const priorityRadios = document.getElementsByName("priority");
+    priorityRadios.forEach(radio => {
+      if (radio.value === "low") {
+        radio.checked = true;
+      } else {
+        radio.checked = false;
+      }
+    });
+  };
 
   const newProjectButton = document.querySelector(".new-project-button");
   const newProjectModal = document.querySelector(".new-project-modal");
@@ -69,6 +86,7 @@ function screenController() {
   };
 
   const displayAllTodoPreview = () => {
+    todoGrid.innerHTML = "";
     let list = app.getActiveProject().getCurrentList();
     list.forEach((todo) => {
       let index = list.indexOf(todo);
@@ -142,19 +160,25 @@ function screenController() {
     });
     return deleteTodoButton;
   };
-  const showTodoModal = document.querySelector(".show-todo-info");
+  const showTodoModal = document.querySelector(".show-todo-modal");
 
   const showTodoInfo = (titleof, dueof, descriptionof, priorityof) => {
-    const title = document.querySelector(".show-todo-info .title");
-    const due = document.querySelector(".show-todo-info .due-date");
-    const description = document.querySelector(".show-todo-info .description");
-    const priority = document.querySelector(".show-todo-info .priority");
-    title.textContent = titleof;
-    due.textContent = dueof;
-    description.textContent = descriptionof;
-    priority.textContent = priorityof;
+    const showTitle = document.querySelector("#show-title-input");
+    const showDue = document.querySelector("#show-due-date");
+    const showDescription = document.querySelector("#show-description");
+    showTitle.value = titleof;
+    showDue.value = dueof;
+    showDescription.textContent = descriptionof;
+    const priorityRadios = document.getElementsByName("show-priority");
+  priorityRadios.forEach(radio => {
+    if (radio.value === priorityof) {
+      radio.checked = true;
+    }
+  });
     showTodoModal.showModal();
   };
+
+  let editingTodo = null;
 
   todoGrid.addEventListener("click", (e) => {
     if (e.target.getAttribute("class") === "todo-grid") {
@@ -163,17 +187,26 @@ function screenController() {
     let todoIndex = e.target.getAttribute("name");
     let projectList = app.getActiveProject().getCurrentList();
     let todo = projectList[+todoIndex];
-
-    let title = todo.title;
-    let due = todo.dueDate;
-    let description = todo.description;
-    let priority = todo.priority;
-    showTodoInfo(title, due, description, priority);
+    editingTodo = todo
+  
+    showTodoInfo(todo.title, todo.dueDate, todo.description, todo.priority);
   });
 
-  const closeTodo = document.querySelector(".close-todo");
+  const closeTodo = document.querySelector(".close-show-todo");
   closeTodo.addEventListener("click", () => {
+    editingTodo.title = document.querySelector("#show-title-input").value;
+    editingTodo.dueDate = document.querySelector("#show-due-date").value;
+    editingTodo.description = document.querySelector("#show-description").value;
+    const priorityRadios = document.getElementsByName("show-priority");
+    priorityRadios.forEach(radio => {
+      if (radio.checked) {
+        editingTodo.priority = radio.value; // Get the selected priority
+      }
+    });
     showTodoModal.close();
+    displayAllTodoPreview();
+    
+  
   });
 }
 

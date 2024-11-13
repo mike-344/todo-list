@@ -77,23 +77,39 @@
         </form>
     </dialog>
 
-    <dialog class = "show-todo-info">
-        <div class="show-todo-wrap">
-            <div class="title-wrap">
-                <div class="title"></div>
-                <div class="due-date"></div>
-            </div>
-            <div class="description-wrap">
-                <div class="description"></div>
-            </div>
-            <div class="priority-wrap">
-                <div class="priority-label">Priority: </div>
-                <div class="priority"></div>
-            </div>
+
+    <dialog class="show-todo-modal">
+        <form class = "show-todo-form">
             <div>
-                <button type="button" class="close-todo">Close</button>
+                <label for="show-title-input">Title:</label>
+                <input autofocus type="text" id="show-title-input" >
+                <label for="show-due-date">Due date:</label>
+                <input type="date" id="show-due-date" >
             </div>
-        </div>
+            <div class="description-wrapper">
+                        <label for="show-description">Description:</label>
+                        <textarea id="show-description" cols="40" rows="10"></textarea>
+            </div>    
+            
+            
+            <fieldset>
+                <legend>Priority:</legend>
+              
+                <input type="radio" id="show-high" name="show-priority" value="high" />
+                <label for="high">High</label><br />
+              
+                <input type="radio" id="show-medium" name="show-priority" value="medium" />
+                <label for="medium">Medium</label><br />
+              
+                <input type="radio" id="show-low" name="show-priority" value="low" />
+                <label for="low">Low</label>
+            </fieldset>
+            
+            <div>
+                <button type="button" class="close-show-todo">Cancel</button>
+                <button type="submit" class="submit-show-todo">Submit</button>
+            </div>
+        </form>
     </dialog>
       
 </body>

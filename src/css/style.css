@@ -102,7 +102,7 @@ body{
    
 }
 
-.new-to-do-modal{
+.new-to-do-modal, .show-todo-modal{
     left: 50%;
     top: 30%;
     transform: translate(-50%, -50%);
@@ -115,13 +115,13 @@ body{
     
 }
 
-.new-to-do-modal #description{
+.new-to-do-modal #description, .show-todo-modal #show-description{
     display: block;
 }
 
 
 
-.new-to-do-modal form{
+.new-to-do-modal form, .show-todo-modal form{
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -133,7 +133,7 @@ body{
 .description-wrapper{
     margin-bottom: 10px;
 }
-.new-to-do-modal fieldset{
+.new-to-do-modal fieldset, .show-todo-modal fieldset{
     margin-bottom: 7px;
     border: none;
 }
@@ -189,44 +189,3 @@ body{
 .todo-grid > div:hover{
     background-color: rgb(234, 230, 230)
 }
-
-.show-todo-info{
-    left: 50%;
-    top: 30%;
-    transform: translate(-50%, -50%);
-    width: 300px;
-    height: 200px;
-    border: none;
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
-    padding: 12px;
-    border-radius: 6px;
-   
-}
-.show-todo-info .title-wrap{
-    display: flex;
-    justify-content: space-between;
-    font-weight: bold;
-}
-
-.show-todo-info .priority-wrap{
-    display: flex;
-    gap: 4px;
-    font-weight: bold;
-    
-}
-
-.show-todo-info .description-wrap{
-    height: 100px;
-    border: 1px solid rgb(115, 115, 206);
-    padding: 6px 8px;
-    border-radius: 9px;
-    
-}
-
-.show-todo-info .show-todo-wrap{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    
- }
