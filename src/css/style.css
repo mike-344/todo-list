@@ -217,7 +217,7 @@ body{
     }
     .new-to-do-modal, .show-todo-modal{
         width: 80%;
-        height: fit-content;
+        height: 400px;
         
     }
     .new-to-do-modal form div:first-child, .show-todo-modal form div:first-child{
