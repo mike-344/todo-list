@@ -168,7 +168,7 @@ function screenController() {
     const showDescription = document.querySelector("#show-description");
     showTitle.value = titleof;
     showDue.value = dueof;
-    showDescription.textContent = descriptionof;
+    showDescription.value = descriptionof;
     const priorityRadios = document.getElementsByName("show-priority");
   priorityRadios.forEach(radio => {
     if (radio.value === priorityof) {
@@ -192,8 +192,13 @@ function screenController() {
     showTodoInfo(todo.title, todo.dueDate, todo.description, todo.priority);
   });
 
+  const saveChangesButton = document.querySelector(".save-show-todo");
   const closeTodo = document.querySelector(".close-show-todo");
-  closeTodo.addEventListener("click", () => {
+  closeTodo.addEventListener("click", () =>{
+    showTodoModal.close()
+  })
+  saveChangesButton.addEventListener("click", (e) => {
+    e.preventDefault();
     editingTodo.title = document.querySelector("#show-title-input").value;
     editingTodo.dueDate = document.querySelector("#show-due-date").value;
     editingTodo.description = document.querySelector("#show-description").value;
@@ -208,6 +213,7 @@ function screenController() {
     
   
   });
+  
 }
 
 export { screenController };
