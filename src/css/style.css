@@ -169,7 +169,7 @@ body{
     border: 1px solid  rgb(115, 115, 206);
     border-radius: 9px;
     box-shadow: 1px 1px 1px 1px gray;
-    
+    overflow: scroll;
 }
 
 .todo-grid > div{
