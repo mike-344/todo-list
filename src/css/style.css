@@ -99,8 +99,9 @@ body{
 }
 
 .content{
-    margin-top: 20px;
-    margin-left: 12px;
+    padding-top: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
    
 }
 
@@ -167,7 +168,7 @@ body{
 }
 .todo-grid{
     height: 500px;
-    width: 600px;
+    width: 80%;
     border: 1px solid  rgb(115, 115, 206);
     border-radius: 9px;
     box-shadow: 1px 1px 1px 1px gray;
@@ -192,7 +193,7 @@ body{
     background-color: rgb(234, 230, 230)
 }
 
-@media (max-width: 850px){
+@media (max-width: 700px){
     .container{
         display: flex;
         flex-direction: column;
@@ -210,10 +211,7 @@ body{
        padding: 16px;
        width: 100%;
     }
-    .sidebar h1{
-        margin: 0;
-        align-self: center;
-    }
+   
     .todo-grid{
         width: 95%;
     }
