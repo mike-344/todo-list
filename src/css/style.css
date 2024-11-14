@@ -22,6 +22,7 @@ body{
     padding-left: 12px;
     padding-right: 12px;
     
+    
 }
 .sidebar h1{
     
@@ -61,6 +62,7 @@ body{
 .projects{
     padding-left: 16px;
     width: fit-content;
+    
 }
 
 .projects button{
@@ -188,4 +190,31 @@ body{
 
 .todo-grid > div:hover{
     background-color: rgb(234, 230, 230)
+}
+
+@media (max-width: 850px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    .projects{
+        display: flex;
+        gap: 12px;
+    }
+    .sidebar{
+       display: flex;
+       flex-direction: column;
+
+       justify-content: center;
+       gap: 14px;
+       padding: 16px;
+       width: 100%;
+    }
+    .sidebar h1{
+        margin: 0;
+        align-self: center;
+    }
+    .todo-grid{
+        width: 95%;
+    }
 }
