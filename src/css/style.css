@@ -215,16 +215,5 @@ body{
     .todo-grid{
         width: 95%;
     }
-    .new-to-do-modal, .show-todo-modal{
-        width: 80%;
-        height: 400px;
-        
-    }
-    .new-to-do-modal form div:first-child, .show-todo-modal form div:first-child{
-        display: flex;
-        flex-direction: column;
-    }
-    textarea{
-        width: 100%;
-    }
+   
 }
